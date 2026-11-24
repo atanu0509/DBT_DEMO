@@ -9,7 +9,7 @@ hour(started_time) as hr_Started_At,
 
 {{ get_season ('STARTED_AT')}} AS SEASON 
 
-from {{source('demo', 'bike')}}
+from {{ ref('stg_bike') }}
 where STARTED_AT != 'started_at'
 )
 
